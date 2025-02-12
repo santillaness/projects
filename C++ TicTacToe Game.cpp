@@ -1,23 +1,12 @@
-// Lab3.cpp   
-// for CS 141 lab 3	
+// Alejandro Santillanes
+// TicTacToe Game
 
 #include <iostream>
 using namespace std;
 
-
 char p1,p2,p3,p4,p5,p6,p7,p8,p9;
 
-// Running display board should print out the board and the characters denoting each square.
-// (Which would display either the letter for the square, or the X or O that has moved there.)
-// Running the code after displayBoard() function for the first time should be like:
-//   -------
-//   |a|b|c|     
-//   -------
-//   |d|e|f|   
-//   -------
-//   |g|h|i|   
-//   -------
-// (With no spaces before the board. The board is made of letters, vertical lines, and dashes: | and - )
+// Displays the board and the characters denoting each square.
 void displayBoard(){
     cout << string(7, '-') << endl;
     cout << "|" << p1 << "|" << p2 << "|" << p3 << "|" << endl;
@@ -29,15 +18,7 @@ void displayBoard(){
    
 }
 
-// This function allows a move to a specific square. For the initial move, if the square is 'b' and player is 'X'
-// after this method is called, the board would look like this:
-//   -------
-//   |a|X|c|     
-//   -------
-//   |d|e|f|   
-//   -------
-//   |g|h|i|   
-//   -------
+// Move to the specific square chosen by the player and turns into "X" or "Y".
 void moveToSquare(char square, char player) {
     switch (square) {
         case 'a':
