@@ -1,0 +1,63 @@
+// Alejandro Santillanes
+// CIS 144
+// BMI Calculator
+
+package BMICalculator;
+
+import java.util.Scanner;
+
+public class BMICalculator {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+				
+		// Print welcome message
+		System.out.println("Welcome to the body mass index (BMI) calculator\n");
+		
+		// Create loop
+		int loop = 1;
+		while (loop != -1) {
+
+		// Obtain weight in pounds and start program or end program
+		System.out.print("Enter your weight in pounds or a -1 to end the program: ");
+		int weight = input.nextInt();
+		
+		if (weight > 0) {
+		
+		// Obtain height in inches
+		System.out.print("Enter your height in inches: ");
+		int height = input.nextInt();
+		
+		// Calculate BMI using weight and height input
+		int bmi = (weight * 703) / (height * height);
+		
+		// Print Results
+		System.out.printf("\nYour BMI is: %d%n\n" , bmi);
+		System.out.println("BMI VALUES");
+		System.out.println("Underweight: less than 18.5");
+		System.out.println("Normal: between 18.5 and 24.9");
+		System.out.println("Overweight: between 25 and 29.9");
+		System.out.println("Obese: 30 or greater\n");
+		
+		// Print user BMI result
+		if (bmi > 30) {
+			System.out.println("You are obese\n");
+		} else {
+			if (bmi > 25.0) {
+				System.out.println("You are overweight\n");
+			} else {
+				if (bmi > 18.5) {
+					System.out.println("You are normal\n");
+				} else {
+					System.out.println("You are underweight\n");
+					}
+				}
+			} 
+			} else {
+				System.out.println("Sentinel Value Encountered - Good Bye");
+				loop =  -1;
+				
+			}
+			}
+	}
+
+}
